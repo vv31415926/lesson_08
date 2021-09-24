@@ -2,7 +2,6 @@ import myLibAcc
 
 def goGame( history ):
     persAcc = myLibAcc.getAccount( history )
-    #history = []  # [покупка, сумма, счет]
 
     while True:
         print('1. пополнение счета')
