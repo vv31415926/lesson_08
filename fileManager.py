@@ -1,7 +1,7 @@
 import myLibManager
 import victory as v
 import persAccount as pa
-import os
+#import os
 
 
 def goManager():
@@ -44,5 +44,5 @@ def goManager():
 
 
 if __name__ == '__main__':
-    curDir = os.getcwd()   # текущий директорий
+    #curDir = os.getcwd()   # текущий директорий
     goManager()
