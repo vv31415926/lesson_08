@@ -9,7 +9,7 @@ def goManager():
     while goMenu:
         nMenu = myLibManager.menu()
 
-        if nMenu ==   1:
+        if nMenu == 1:
             myLibManager.inNewDir()
         elif nMenu == 2:
             myLibManager.delDir()

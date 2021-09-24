@@ -27,6 +27,15 @@ def menu():
 # ------------------------------------------------------
 
 
+def outSeparator( f ):
+    def wrapper(*args, **kwargs):
+        print('----------------')
+        rez = f(*args, **kwargs)
+        print('----------------\n')
+        return rez
+    return wrapper
+
+@outSeparator
 def inNewDir():
     s = input(  'Введите имя новой папки: ')
     if not os.path.exists(s):
@@ -44,7 +53,7 @@ def newDir( name ):
         return False
 # ------------------------------------------------------
 
-
+@outSeparator
 def delDir( ):
     s = input(  'Введите имя папки для удаления: ')
     p = os.path.join( os.getcwd(), s )
@@ -55,7 +64,7 @@ def delDir( ):
     return p
 # ----------------------------------------------------
 
-
+@outSeparator
 def copyFil():
     srcF = input('Введите имя файла для копирования: ')
     n = 1
@@ -74,12 +83,16 @@ def copyFil():
     if n == 2:
         shutil.copy( srcF, dstF )
 # ------------------------------------------------------
+
+
+@outSeparator
 def viewDir():
     lst = os.listdir( os.getcwd() )
-    print('----------------')
     print( lst )
-    print('----------------')
+
+
 # ------------------------------------------------------
+@outSeparator
 def saveDir():
     lst = os.listdir(os.getcwd())
     lst_dir=[]
@@ -100,31 +113,36 @@ def saveDir():
         print( 'Сохранено в listdir.txt:\n','files: ',lst_file)
         print( 'dirs: ',lst_dir)
 
+
 # -------------------------------------------------------
+@outSeparator
 def viewOnlyDir():
     lst = os.listdir( os.getcwd() )
-    print('----------------')
     lst = list(   filter(  lambda x: os.path.isdir(x), lst )    )
     print( lst )
-    print('----------------')
+
+
 # ------------------------------------------------------
+@outSeparator
 def viewOnlyFil():
     lst = os.listdir( os.getcwd() )
-    print('----------------')
     lst = list(   filter(  lambda x: os.path.isfile(x), lst )    )
     print( lst )
-    print('----------------')
-#------------------------------------------------------
+
+
+# ------------------------------------------------------
+@outSeparator
 def infoOS():
-    print('----------------')
     print(  platform.uname() )
-    print('----------------')
-#------------------------------------------------------
+
+
+# ------------------------------------------------------
+@outSeparator
 def infoMy():
-    print('----------------')
     print(  'Создатель - Василич' )
-    print('----------------')
-#------------------------------------------------------
+
+
+# ------------------------------------------------------
 def chDir():
     n = 1
     while n == 1:
